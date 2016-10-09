@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>My TODO list</title>
+    <script>
+function addTodo(item) {
+  var todo = document.getElementById("todo");
+  if (!todo) return;
+  var node = document.createTextNode(item);
+  var li = document.createElement("li");
+  li.appendChild(node);
+  var del = document.createElement("button");
+  var x = document.createTextNode("X");
+  del.appendChild(x);
+  del.onclick = function() { todo.removeChild(li); };
+  li.appendChild(del);
+  todo.appendChild(li);
+}
+    </script>
+  </head>
+  <body>
+    <h1>Todo list</h1>
+    <p>What do you need to do?</p>
+    <input autofocus="autofocus" id="item" size="80" onchange="addTodo(this.value); this.value=''" />
+    <ol id="todo" />
+  </body>
+</html>
