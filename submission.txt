@@ -1,0 +1,30 @@
+Name: Ken Li (2131620)
+
+Problems encountered:
+-
+-
+-
+
+=================
+PART 1: todo.html
+=================
+
+Functions used to operate on the DOM:
+    document.getElementById(id);
+        Gets an element on the DOM with the specified ID.
+        If there are multiple elements with the same ID, then the topmost element is returned.
+    document.createTextNode(text);
+        Creates a plain text node on the DOM.
+        Example:
+            <p>Some text</p>
+            "Some text" is a text node.
+    document.createElement(element);
+        Creates an element with the name given.
+        Example:
+            JS: document.createElement("div")
+            HTML: <div/>
+    element.appendChild(node);
+        Puts a DOM node as a child of a particular element.
+        If the element already has children, the given node is inserted as the last child.
+    element.removeChild(node);
+        Opposite of appendChild. The node given is removed from the element's children.

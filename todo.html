@@ -4,16 +4,41 @@
     <title>My TODO list</title>
     <script>
 function addTodo(item) {
+   // create todo list
   var todo = document.getElementById("todo");
   if (!todo) return;
+
+  // create a new todo item with the text argument
   var node = document.createTextNode(item);
   var li = document.createElement("li");
   li.appendChild(node);
+
+  // create delete button
   var del = document.createElement("button");
   var x = document.createTextNode("X");
   del.appendChild(x);
-  del.onclick = function() { todo.removeChild(li); };
+  del.onclick = function() {
+    todo.removeChild(li);
+  };
   li.appendChild(del);
+
+  // create up/down buttons
+  var upButton = document.createElement("button");
+  var upArrow = document.createTextNode("up");
+  upButton.appendChild(upArrow);
+  upButton.onclick = function() {
+    todo.insertBefore(li, li.previousSibling);
+  };
+  li.appendChild(upButton);
+  var downButton = document.createElement("button");
+  var downArrow = document.createTextNode("down");
+  downButton.appendChild(downArrow);
+  downButton.onclick = function() {
+    todo.insertBefore(li, li.nextSibling.nextSibling);
+  };
+  li.appendChild(downButton);
+
+  // add new todo item into todo list
   todo.appendChild(li);
 }
     </script>
